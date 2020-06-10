@@ -185,6 +185,8 @@ class Snake:
             FRAME_RATE = SLOW_FRAME_RATE
             if self.SNAKE_LENGTH > ORIGINAL_LENGTH:
                 self.SNAKE_LENGTH -= 1
+            global vomitted
+            vomitted += 1
 
 
         red_apple.draw()
@@ -260,14 +262,16 @@ purple_apple = Apple(purple_apple_img, red=False)
 running = True
 paused = False
 high_score = 0
+vomitted = 0
 
 green_apple_duration = 5
 while running:
     clock.tick(FRAME_RATE)
 
     # the next 2 lines just paint over the scores of the previous frame:
-    show("  ", x=WIDTH//2-my_font.size(" "*4)[0], y = CUBE_WIDTH,colour=pygame.Color('black'), surface=screen, bg=pygame.Color('black'))
-    show("  ", x=WIDTH//2+my_font.size(" "*12)[0], y = CUBE_WIDTH,colour=pygame.Color('black'), surface=screen, bg=pygame.Color('black'))
+    show("  ", x=WIDTH//2-my_font.size(" "*9)[0], y = CUBE_WIDTH,colour=pygame.Color('black'), surface=screen, bg=pygame.Color('black'))
+    show("  ", x=WIDTH//2+my_font.size(" "*2)[0], y = CUBE_WIDTH,colour=pygame.Color('black'), surface=screen, bg=pygame.Color('black'))
+    show("  ", x=WIDTH//2+my_font.size(" "*18)[0], y = CUBE_WIDTH,colour=pygame.Color('black'), surface=screen, bg=pygame.Color('black'))
 
     score = snake.SNAKE_LENGTH - ORIGINAL_LENGTH
     if score > high_score:
@@ -295,9 +299,10 @@ while running:
             purple_apple.purple_apple_start_time = time.time() - purple_apple.purple_apple_current_time
 
         # draw the scores:
-    show("eaten:   , most eaten:  ", x=WIDTH//2, y = CUBE_WIDTH,colour=pygame.Color('white'), surface=screen)
-    show(" {} ".format(score), x=WIDTH//2-my_font.size(" "*4)[0], y = CUBE_WIDTH,colour=pygame.Color('red'), surface=screen)
-    show(" {} ".format(high_score), x=WIDTH//2+my_font.size(" "*12)[0], y = CUBE_WIDTH,colour=pygame.Color('red'), surface=screen)
+    show("vomited:   , eaten:   , most eaten:  ", x=WIDTH//2, y = CUBE_WIDTH,colour=pygame.Color('white'), surface=screen)
+    show(" {} ".format(vomitted), x=WIDTH//2-my_font.size(" "*9)[0], y = CUBE_WIDTH,colour=pygame.Color('red'), surface=screen)
+    show(" {} ".format(score), x=WIDTH//2+my_font.size(" "*2)[0], y = CUBE_WIDTH,colour=pygame.Color('red'), surface=screen)
+    show(" {} ".format(high_score), x=WIDTH//2+my_font.size(" "*18)[0], y = CUBE_WIDTH,colour=pygame.Color('red'), surface=screen)
 
     # flip when done with drawing/updating
     pygame.display.flip()
