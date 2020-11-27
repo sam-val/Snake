@@ -1,6 +1,6 @@
-# Apple Snake
+# Apple Snake:
 
-`Snake eats apple. However eating the purple apple will make it vomit.`
+**`>> Snake eats apple. However eating the purple apple will make it vomit.`**
 
 ## Game-arts:
 
