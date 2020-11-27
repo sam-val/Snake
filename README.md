@@ -1,11 +1,17 @@
-# Apple Snake Game
-## copyright of game-arts:
+# Apple Snake
 
-### Snake head & apple: cartoon PNG Designed By 588ku from <a href="https://pngtree.com/">Pngtree.com</a>
+`Snake eats apple. However eating the purple apple will make it vomit.`
 
-### Tail (badly modified by me): snake PNG Designed By Morphart from <a href="https://pngtree.com/">Pngtree.com</a>
+## Game-arts:
+
+Snake head & apple: By [588ku][ref1]
+
+Tail (badly modified by me): [Morphart][ref2]
 
 
-Simple snake game. However eating the purple apple will make it vomit.
+[ref1]: https://pngtree.com/588ku_9041202
+[ref2]: https://pngtree.com/morphart_15911020
+
+## Image(s):
 
 ![alt text](Images/screenshot.png)
